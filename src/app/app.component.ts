@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   counter: number;
 
-  constructor()  {
+  constructor(private store: Store<{counter: number}>)  {
     this.counter = 10;
   }
 
