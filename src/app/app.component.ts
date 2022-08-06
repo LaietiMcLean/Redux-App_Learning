@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private store: Store<AppState>) {
     //Since we have installed the store, we can subscribe now to the actions
     this.store.subscribe((state) => {
-      console.log(state)
+      console.log(state);
       this.counter = state.counter;
     });
   }
