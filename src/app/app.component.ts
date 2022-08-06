@@ -1,22 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
+//import { decrement, increment } from './counter/counter.actions';
+import * as actions from './counter/counter.actions';
+
+interface AppState {
+  counter: number;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  counter: number;
+  counter!: number;
 
-  constructor(private store: Store<{counter: number}>)  {
-    this.counter = 10;
+  constructor(private store: Store<AppState>) {
+    //Since we have installed the store, we can subscribe now to the actions
+    this.store.subscribe((state) => {
+      console.log(state)
+      this.counter = state.counter;
+    });
   }
 
   increment() {
-    this.counter += 1;
+    this.store.dispatch(actions.increment());
   }
   decrement() {
-    this.counter -= 1;
+    this.store.dispatch(actions.decrement());
   }
 }
