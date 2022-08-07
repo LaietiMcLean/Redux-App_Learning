@@ -14,9 +14,6 @@ export class SonComponent implements OnInit {
   /*Keep in mind that the Store allows you to know the state stored,
   so thanks to the Store we know the counter value */
   constructor(private store: Store<AppState>) {
-    this.store.subscribe((state) => {
-      this.counter = state.counter;
-    });
   }
 
   ngOnInit(): void {
