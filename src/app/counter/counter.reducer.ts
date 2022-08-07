@@ -8,6 +8,6 @@ export const counterReducer = createReducer(
   initialState,
   on(increment, (state) => state + 1),
   on(decrement, (state) => state - 1),
-  on(multiply, (state) => state * 2),
-  on(divide, (state) => state / 2)
+  on(multiply, (state, {number}) => state * number),
+  on(divide, (state, {number}) => state / number)
 );

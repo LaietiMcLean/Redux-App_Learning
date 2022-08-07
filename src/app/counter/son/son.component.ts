@@ -25,10 +25,10 @@ export class SonComponent implements OnInit {
   }
 
   multiply() {
-    this.store.dispatch(actions.multiply());
+    this.store.dispatch(actions.multiply({number: 2}));
   }
 
   divide() {
-    this.store.dispatch(actions.divide());
+    this.store.dispatch(actions.divide({number: 2}));
   }
 }
