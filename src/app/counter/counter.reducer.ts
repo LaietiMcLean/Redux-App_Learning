@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { decrement, increment } from './counter.actions';
 
 
-export const initialState = 20;
+export const initialState = 10;
 
 export const counterReducer = createReducer(
   initialState,

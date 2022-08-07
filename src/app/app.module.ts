@@ -21,7 +21,7 @@ import { GrandsonComponent } from './counter/grandson/grandson.component';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      count: counterReducer
+      counter: counterReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

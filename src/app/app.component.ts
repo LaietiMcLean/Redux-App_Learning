@@ -15,7 +15,7 @@ interface AppState {
 export class AppComponent {
   counter!: number;
 
-  constructor(private store: Store<AppState>) {
+  constructor(public store: Store<AppState>) {
     //Since we have installed the store, we can subscribe now to the actions
     this.store.subscribe((state) => {
       console.log(state);
